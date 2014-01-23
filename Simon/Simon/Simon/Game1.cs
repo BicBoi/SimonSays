@@ -105,9 +105,9 @@ namespace Simon
             {
                 // TODO: After 1 second add a random move
 
-                // moves.Add((SimonColors)rand.Next(0, 4));
-                // turn = Turn.PLAYBACK;
-                // PlayBackIndex = 0;
+                moves.Add((SimonColors)rand.Next(0, 4));
+                turn = Turn.PLAYBACK;
+                PlayBackIndex = 0;
             }
             else if (turn == Turn.PLAYBACK)
             {
