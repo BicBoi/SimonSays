@@ -85,6 +85,7 @@ namespace Simon
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
+            
         }
 
         /// <summary>
@@ -216,20 +217,30 @@ namespace Simon
 
                 spriteBatch.Draw(board, new Rectangle(0, 0, 800, 600), Color.White);
 
-                // Maybe we shouldn't draw all the highlights?   Just the "Lit" one perhaps?   But here's the code if you want to..
+                
 
                 // Draw green hightlight (note that this shouldn't ALWAYS been drawn)
-                spriteBatch.Draw(simon, new Rectangle(46, 40, 238, 243), new Rectangle(0, 0, 238, 243), Color.White);
+                if (Lit == SimonColors.GREEN)
+                {
+                    spriteBatch.Draw(simon, new Rectangle(46, 40, 238, 243), new Rectangle(0, 0, 238, 243), Color.White);
+                }
 
                 // Draw red hightlight (note that this shouldn't ALWAYS been drawn)
-                // spriteBatch.Draw(simon, new Rectangle(46 + 277, 40, 238, 243), new Rectangle(277, 0, 238, 243), Color.White);
+                if (Lit == SimonColors.RED)
+                {
+                    spriteBatch.Draw(simon, new Rectangle(46 + 277, 40, 238, 243), new Rectangle(277, 0, 238, 243), Color.White);
+                }
 
                 // Draw yellow hightlight (note that this shouldn't ALWAYS been drawn)
-                // spriteBatch.Draw(simon, new Rectangle(46, 40 + 276, 238, 243), new Rectangle(0, 276, 238, 243), Color.White);
-
+                if (Lit == SimonColors.YELLOW)
+                {
+                    spriteBatch.Draw(simon, new Rectangle(46, 40 + 276, 238, 243), new Rectangle(0, 276, 238, 243), Color.White);
+                }
                 // Draw blue hightlight (note that this shouldn't ALWAYS been drawn)
-                // spriteBatch.Draw(simon, new Rectangle(46 + 277, 40 + 276, 238, 243), new Rectangle(277, 276, 238, 243), Color.White);
-
+                if (Lit == SimonColors.BLUE)
+                {
+                    spriteBatch.Draw(simon, new Rectangle(46 + 277, 40 + 276, 238, 243), new Rectangle(277, 276, 238, 243), Color.White);
+                }
                 // Draw cursor
                 spriteBatch.Draw(cursor, new Vector2(ms.X, ms.Y), Color.White);
 
