@@ -171,9 +171,10 @@ namespace Simon
             }
             else if (turn == Turn.GAMEOVER)
             {
-                SoundManager.PlayGameOver();
+                System.Media.SystemSounds.Asterisk.Play();
 
                 moves.Clear();
+                if (turntime > 750)
                 turn = Turn.COMPUTER;
                 Lit = SimonColors.NONE;
             }
@@ -214,21 +215,21 @@ namespace Simon
                 return SimonColors.GREEN;
             }
 
-            // RED
+           
             if (isPressed(simon, new Rectangle(46 + 277, 40, 238, 243), new Rectangle(277, 0, 238, 243)))
             {
                 return SimonColors.RED;
             }
 
 
-            // YELLOW
+            
             if (isPressed(simon, new Rectangle(46, 40 + 276, 238, 243), new Rectangle(0, 276, 238, 243)))
             {
                 return SimonColors.YELLOW;
             }
 
 
-            // BLUE
+            
             if (isPressed(simon, new Rectangle(46 + 277, 40 + 276, 238, 243), new Rectangle(277, 276, 238, 243)))
             {
                 return SimonColors.BLUE;

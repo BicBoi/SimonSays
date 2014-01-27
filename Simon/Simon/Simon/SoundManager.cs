@@ -13,6 +13,7 @@ namespace Simon
     public static class SoundManager
     {
         private static List<SoundEffect> simonSounds = new List<SoundEffect>();
+        
         private static int simonSoundCount = 4;
 
         private static SoundEffect gameOver;
@@ -23,13 +24,13 @@ namespace Simon
         {
             try
             {
-                gameOver = content.Load<SoundEffect>(@"gameover");
+                gameOver = content.Load<SoundEffect>(@"gameover2");
 
-                for (int x = 1; x <= simonSoundCount; x++)
+                for (int s = 1; s <= simonSoundCount; s++)
                 {
                     simonSounds.Add(
                         content.Load<SoundEffect>(@"simonSound" +
-                            x.ToString()));
+                            s.ToString()));
                 }
             }
             catch
